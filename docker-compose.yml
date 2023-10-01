@@ -10,5 +10,7 @@ services:
   frontend:
     build:
       context: ./students4students_frontend # Path to the directory containing your Dockerfile
+    depends_on:
+      - backend
     ports:
       - "5173:5173" # Map container port to host port
