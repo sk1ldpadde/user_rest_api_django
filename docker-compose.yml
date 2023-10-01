@@ -1,8 +1,14 @@
 version: '3.9'
 
 services:
-  web:
+  backend:
     build: .
     command: python manage.py runserver 0.0.0.0:8000
     ports:
       - 8000:8000
+
+  frontend:
+    build:
+      context: ./students4students_frontend # Path to the directory containing your Dockerfile
+    ports:
+      - "5173:5173" # Map container port to host port
