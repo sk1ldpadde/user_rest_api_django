@@ -1,0 +1,58 @@
+[
+      {
+            "model": "students4students.Category",
+            "pk": 1,
+            "fields": {
+                  "name": "Allgemein"
+            }
+      },
+      {
+            "model": "students4students.Category",
+            "pk": 2,
+            "fields": {
+                  "name": "Wohnen"
+            }
+      },
+      {
+            "model": "students4students.Category",
+            "pk": 3,
+            "fields": {
+                  "name": "Party"
+            }
+      },
+      {
+            "model": "students4students.Category",
+            "pk": 4,
+            "fields": {
+                  "name": "Lernen"
+            }
+      },
+      {
+            "model": "students4students.Category",
+            "pk": 5,
+            "fields": {
+                  "name": "Nachhilfe"
+            }
+      },
+      {
+            "model": "students4students.Category",
+            "pk": 6,
+            "fields": {
+                  "name": "Sharing"
+            }
+      },
+      {
+            "model": "students4students.Category",
+            "pk": 7,
+            "fields": {
+                  "name": "Info"
+            }
+      },
+      {
+            "model": "students4students.Category",
+            "pk": 8,
+            "fields": {
+                  "name": "Anfrage"
+            }
+      }
+]
