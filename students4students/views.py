@@ -17,17 +17,16 @@ from .serializer import LoginUserDataSerializer, \
 # Create your views here.
 
 
-"""
-the post method defines the login mechanism where the email and password 
-of the user whos trying to log in is processed in order to verify the users
-identity.
-"""
-
-
 class LoginView(APIView):
     def get(self, request):
         # TODO send login frontend page
         pass
+
+    """
+    the post method defines the login mechanism where the email and password 
+    of the user whos trying to log in is processed in order to verify the users
+    identity.
+    """
 
     def post(self, request):
         login_serializer = LoginUserDataSerializer(data=request.data)
@@ -85,7 +84,7 @@ class DegreeView(APIView):
             degree_queryset = Degree.objects.all()
 
         serializer = DegreeSerializer(degree_queryset, many=True)
-        return Response(serializer.data)    
+        return Response(serializer.data)
 
 
 class FacultyView(APIView):
