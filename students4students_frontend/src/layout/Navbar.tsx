@@ -1,25 +1,9 @@
 import React from "react";
-import Registration from "../pages/Regestration";
-import { useState } from "react";
-import Degrees from "../components/Degrees";
+// import Registration from "../pages/Regestration";
+// import { useState } from "react";
+// import Degrees from "../components/Degrees";
 
 const Navbar: React.FC = () => {
-  //Event handler for the registration button
-  const [showRegistration, setShowRegistration] = useState(false); // Zustand für die Anzeige der Registration-Komponente
-  const [showHome, setShowHome] = useState(false); // Zustand für die Anzeige der Registration-Komponente
-
-  const registerClicked = () => {
-    console.log("Clicked");
-    setShowRegistration(true); // Setzen Sie den Zustand auf "true", um die Komponente anzuzeigen
-    setShowHome(false);
-  };
-
-  const homeClicked = () => {
-    console.log("Clicked");
-    setShowHome(true); // Setzen Sie den Zustand auf "true", um die Komponente anzuzeigen
-    setShowRegistration(false);
-  };
-
   return (
     <>
       <nav className="navbar navbar-expand-lg bg-light">
@@ -51,14 +35,18 @@ const Navbar: React.FC = () => {
                 <a
                   className="nav-link active"
                   aria-current="page"
-                  href="#"
-                  onClick={homeClicked}
+                  href="/"
+                  // onClick={homeClicked}
                 >
                   Home
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">
+                <a
+                  className="nav-link active"
+                  aria-current="page"
+                  href="/login"
+                >
                   Login
                 </a>
               </li>
@@ -66,8 +54,8 @@ const Navbar: React.FC = () => {
                 <a
                   className="nav-link active"
                   aria-current="page"
-                  href="#"
-                  onClick={registerClicked}
+                  href="/registration"
+                  // onClick={registerClicked}
                 >
                   Registrierung
                 </a>
@@ -77,8 +65,8 @@ const Navbar: React.FC = () => {
         </div>
       </nav>
       <div>
-        {showRegistration && <Registration />}
-        {showHome && <Degrees />}
+        {/* {showRegistration && <Registration />}
+        {showHome && <Degrees />} */}
       </div>
     </>
   );

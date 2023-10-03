@@ -1,8 +1,8 @@
-import "./App.css";
 //import Registration from "./pages/Regestration.tsx";
 import Navbar from "./layout/Navbar.tsx";
 import Degrees from "./components/Degrees.tsx";
 import Registration from "./pages/Regestration.tsx";
+import Login from "./pages/Login.tsx";
 
 function App() {
   let component;
@@ -16,7 +16,7 @@ function App() {
       break;
 
     case "/login":
-      component = <Registration />;
+      component = <Login />;
       break;
   }
 
