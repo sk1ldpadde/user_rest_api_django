@@ -31,7 +31,7 @@ function Degrees() {
 
   return (
     <>
-      <div>
+      <div className="container">
         <h2> All degrees </h2>
         <div>
           <ul>
