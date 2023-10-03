@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect, useState } from "react";
+import "./css/App.css";
+import BackendAPI from "./components/BackendAPI.tsx";
+import RegisterPage from "./components/RegisterPage.tsx";
 
 // Define the type for the objects in your JSON data
 type DataItem = {
@@ -12,20 +12,17 @@ type DataItem = {
 
 function App() {
   const [data, setData] = useState<DataItem[]>([]);
-  const [count, setCount] = useState(0)
 
   // Create a function to fetch data
-  const fetchData = async () => {
+  async function fetchData() {
     try {
-      // Replace this URL with the endpoint you are fetching data from
-      const apiUrl = 'http://localhost:8000/students4students/degrees';
-      const response = await fetch(apiUrl);
-      const result = await response.json();
+      let result = await BackendAPI.getDataFromBackend(BackendAPI.DEGREE_TABLE);
 
       // Assuming result is an array of DataItem objects
+      console.log(result);
       setData(result); // Store the fetched data in the 'data' state variable
     } catch (error) {
-      console.error('Error fetching data:', error);
+      console.error("Error fetching data:", error);
     }
   }
 
@@ -35,17 +32,11 @@ function App() {
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
+      <div></div>
       <h1>Vite + React</h1>
       <h2> All degrees </h2>
       <div>
+        <RegisterPage />
         <ul>
           {data.map((item) => (
             <li key={item.id}>
@@ -57,8 +48,10 @@ function App() {
         </ul>
       </div>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+        <button
+          onClick={() => BackendAPI.getDataFromBackend(BackendAPI.DEGREE_TABLE)}
+        >
+          Click me
         </button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
@@ -68,7 +61,7 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

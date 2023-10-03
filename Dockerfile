@@ -1,5 +1,5 @@
 
-FROM python:3.10
+FROM nikolaik/python-nodejs:python3.11-nodejs20-slim AS base
 
 ENV PYTHONUNBUFFERED=1
 
@@ -24,3 +24,5 @@ RUN python3 manage.py migrate
 RUN python3 manage.py loaddata category_data.json
 RUN python3 manage.py loaddata faculty_data.json
 RUN python3 manage.py loaddata degree_data.json
+
+
