@@ -31,6 +31,13 @@ function Registration() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    // Überprüfen, ob die E-Mail-Adresse eine DHBW-E-Mail-Adresse ist, kann raus wenn im Backend implementiert
+    if (!formData.email.endsWith("@lehre.dhbw-stuttgart.de")) {
+      alert("Bitte nutzen Sie eine DHBW-E-Mail-Adresse zur Registrierung.");
+      return;
+    }
+
     try {
       const response = await fetch(
         "http://localhost:8000/students4students/register",
@@ -46,7 +53,7 @@ function Registration() {
 
       if (response.ok) {
         // Die Anfrage war erfolgreich
-        console.log("Benutzer wurde erfolgreich registriert.");
+        console.log(response.json());
         // Hier können Sie die Antwort vom Backend verarbeiten, wenn benötigt
       } else {
         // Die Anfrage war nicht erfolgreich
