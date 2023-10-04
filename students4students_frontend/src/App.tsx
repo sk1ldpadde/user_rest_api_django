@@ -1,3 +1,4 @@
+
 //import Registration from "./pages/Regestration.tsx";
 import Navbar from "./layout/Navbar.tsx";
 import Degrees from "./components/Degrees.tsx";
