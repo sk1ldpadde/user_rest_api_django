@@ -11,11 +11,14 @@ To be continued...
 
 # Wie läuft die Einrichtung des Repositories ab?
 
-#Welche externen Bibliotheken werden benötigt & Wie bringt man das Projekt zum laufen?
-Zur Ausführung muss Docker auf dem Zielrechner installiert worden sein.
-Innerhalb des Terminals sollte nun der Befehl docker-compose up ausgeführt werden. Das startet das Frontend und das Backend
 
-Nun muss noch die Datenbank aktiviert werden, dafür in den Ordner in dem die Datenb ank hinterlegt wurde wechseln und innerhalb des Terminals folgende Befehle starten:
+# Welche externen Bibliotheken werden benötigt & Wie bringt man das Projekt zum laufen?
 
-1. docker build -t mysql_server .
-2. docker run --name mysql_server_container -p 3306:3306 -d mysql_server
+Zur Ausführung des Projektes lassen Sie
+
+- auf Windows: das SETUP.bat
+- auf einem MacOS oder Linux-Rechner: SETUP.sh
+  laufen.
+
+Wichtig: die Appliaktion wird über Docker-Container aufgebaut. Somit ist die einzige
+Voraussetzung, dass Sie Docker Desktop auf Ihrem Rechner installiert haben!
