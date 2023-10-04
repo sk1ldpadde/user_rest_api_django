@@ -84,7 +84,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'students4students',
         'USER': 'root',
-        #Achtung habe hier das Passwort entfernt
+        'PASSWORD': 'root',
         'HOST': "host.docker.internal",
         'PORT': '3306',
         'OPTIONS': {
